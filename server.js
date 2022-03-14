@@ -12,7 +12,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-
+app.get('/', (req, res) => {
+       res.send('Api is running');
+});
 app.use('/api/user', userRoutes);
 // app.use('api/chat', chatRoutes);
 
@@ -22,11 +24,10 @@ app.use('/api/user', userRoutes);
 //     app.use(express.static(path.join(_dirname1c)))
 
 // } else {
-//     app.get('/', (req, res) => {
-//         res.send('Api is running');
+//     
 //     });
 // }
 app.use(notFound);
 app.use(errorHandler);
 const PORT = process.env.PORT || 3000
-app.listen(3000, console.log('server started on 3000 ${PORT}'));
+app.listen( console.log('server started on 3000 ${PORT}'));
